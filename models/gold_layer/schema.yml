@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: sales_fact
+    description: "Central transactional sales fact table used for BI and ML"
+
+    columns:
+      - name: order_id
+        description: "Unique order identifier"
+        tests:
+          - not_null
+
+      - name: item_id
+        description: "Product identifier"
+        tests:
+          - not_null
+
+      - name: total_price
+        description: "Revenue amount for each order line"
+        tests:
+          - not_null
+
+  - name: branch_sales
+    description: "Daily branch-level aggregated KPI table"
+
+    columns:
+      - name: branch_id
+        tests:
+          - not_null
+
+      - name: order_date
+        tests:
+          - not_null
+
+      - name: total_revenue
+        tests:
+          - not_null

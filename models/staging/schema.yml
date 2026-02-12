@@ -1,0 +1,117 @@
+version: 2
+
+sources:
+  - name: landing_layer
+    database: ANALYTICS_DB
+    schema: RAW
+    tables:
+      - name: CUSTOMERS
+      - name: ORDERS
+      - name: ORDER_DETAILS
+      - name: BRANCHES
+      - name: CATEGORIES
+
+models:
+  - name: stg_customers
+    description: "Cleaned customer staging layer"
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+
+      - name: email
+        tests:
+          - not_null
+
+  - name: stg_categories
+    description: "Cleaned product and category hierarchy"
+    columns:
+      - name: item_id
+        tests:
+          - not_null
+          - unique
+
+      - name: item_name
+        tests:
+          - not_null
+
+      - name: brand
+        tests:
+          - not_null
+
+      - name: category_level_1
+        tests:
+          - not_null
+
+  - name: stg_orders
+    description: "Cleaned order transactions"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+      - name: branch_id
+        tests:
+          - not_null
+
+      - name: user_id
+        tests:
+          - not_null
+
+      - name: total_basket
+        tests:
+          - not_null
+
+  - name: stg_order_details
+    description: "Cleaned order line items"
+    columns:
+      - name: order_detail_id
+        tests:
+          - not_null
+          - unique
+
+      - name: order_id
+        tests:
+          - not_null
+
+      - name: item_id
+        tests:
+          - not_null
+
+      - name: quantity
+        tests:
+          - not_null
+
+      - name: unit_price
+        tests:
+          - not_null
+
+  - name: stg_branches
+    description: "Cleaned branch dimension with geographic coordinates"
+
+    columns:
+      - name: branch_id
+        tests:
+          - not_null
+
+      - name: town
+        tests:
+          - not_null
+
+      - name: region
+        tests:
+          - not_null
+
+      - name: city
+        tests:
+          - not_null
+
+      - name: latitude
+        tests:
+          - not_null
+
+      - name: longitude
+        tests:
+          - not_null
