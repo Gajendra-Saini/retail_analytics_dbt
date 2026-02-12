@@ -19,7 +19,6 @@ clean-targets:
 models:
   retail_analytics_dbt:
 
-    # default for all models
     +database: ANALYTICS_DB
     +materialized: view
 
