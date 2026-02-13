@@ -67,10 +67,6 @@ The final output supports scalable analytics, historical tracking, and BI-ready 
 
 # 🧱 Step-by-Step Implementation
 
-This section explains how the project was built from scratch.
-
----
-
 ## 1️⃣ Raw Data Layer (Snowflake)
 
 Raw retail data was first loaded into **Snowflake**.
