@@ -22,7 +22,7 @@ The final output supports scalable analytics, historical tracking, and BI-ready 
 
 <img width="1317" height="707" alt="Screenshot 2026-02-13 at 5 09 09 PM" src="https://github.com/user-attachments/assets/ea25a57f-35bd-4c67-b10f-04ff7078a913" />
 <img width="1469" height="803" alt="Screenshot 2026-02-13 at 5 30 08 PM" src="https://github.com/user-attachments/assets/86e1710f-c241-4712-8295-e5653cb68470" />
-
+<img width="1469" height="835" alt="Screenshot 2026-02-13 at 5 31 01 PM" src="https://github.com/user-attachments/assets/37960905-f2ef-42a8-ae44-9459fe76f2bd" />
 
 ---
 
