@@ -202,8 +202,7 @@ Implemented data quality validation using built-in **dbt tests**.
         to: ref('stg_customers')
         field: user_id
 ```
-
-<img width="1470" height="776" alt="Screenshot 2026-02-13 at 5 06 56 PM" src="https://github.com/user-attachments/assets/cd82ed88-0845-43da-8937-4e89205e9f81" />
+<img width="1470" height="807" alt="Screenshot 2026-02-13 at 5 27 45 PM" src="https://github.com/user-attachments/assets/25e4fa32-7d25-4a0e-8791-c20a7dbc9780" />
 
 ---
 
