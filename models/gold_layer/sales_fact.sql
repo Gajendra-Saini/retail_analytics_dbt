@@ -1,5 +1,20 @@
+{{ config(
+    materialized='incremental',
+    unique_key=['order_id','item_id'],
+    incremental_strategy='merge'
+) }}
+
 with orders as (
-    select * from {{ ref('stg_orders') }}
+
+    select *
+    from {{ ref('stg_orders') }}
+
+    {% if is_incremental() %}
+        where order_ts > (
+            select max(order_ts) from {{ this }}
+        )
+    {% endif %}
+
 ),
 
 order_details as (
@@ -36,7 +51,9 @@ select
 
     od.quantity,
     od.unit_price,
-    od.total_price
+    od.total_price,
+
+    {{ convert_to_usd('od.total_price') }} as total_price_usd
 
 from orders o
 

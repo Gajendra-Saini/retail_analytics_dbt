@@ -1,24 +1,43 @@
 with source as (
-    select * from {{ source('landing_layer', 'CUSTOMERS') }}
+
+    select *
+    from {{ source('landing_layer', 'CUSTOMERS') }}
+
 ),
+
+city_map as (
+
+    select *
+    from {{ ref('city_mapping') }}
+
+),
+
 cleaned as (
 
     select
-        user_id,
-        lower(trim(email)) as email,
-        trim(full_name) as full_name,
-        status,
+        s.user_id,
+        lower(trim(s.email)) as email,
+        trim(s.full_name) as full_name,
+        s.status,
+
         case 
-            when upper(gender) in ('M','F') then upper(gender)
+            when upper(s.gender) in ('M','F') then upper(s.gender)
             else 'UNKNOWN'
         end as gender,
-        birth_date::date as birth_date,
-        trim(region) as region,
-        trim(city) as city,
-        trim(town) as town,
-        trim(district) as district,
-        trim(address) as address
-    from source
+
+        s.birth_date::date as birth_date,
+
+        cm.region_name as region,  
+        trim(s.city) as city,
+        trim(s.town) as town,
+        trim(s.district) as district,
+        trim(s.address) as address,
+
+        cm.pincode   
+
+    from source s
+    left join city_map cm
+        on upper(trim(s.city)) = upper(cm.city)
 
 )
 
