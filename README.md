@@ -140,12 +140,6 @@ Built a central transactional fact table using an **incremental merge strategy**
 {% endif %}
 ```
 
-### Purpose
-
-- Load only new or updated records  
-- Improve performance on large datasets  
-- Enable scalable fact table processing  
-
 <img width="1469" height="830" alt="Screenshot 2026-02-13 at 5 02 05 PM" src="https://github.com/user-attachments/assets/d5e34c5b-1a05-4ebe-bef7-f4ed9679b4a9" />
 
 ---
@@ -164,12 +158,6 @@ Implemented historical tracking using **dbt snapshots**.
 - `DBT_VALID_TO`  
 - `DBT_SCD_ID`  
 - `DBT_UPDATED_AT`  
-
-### Purpose
-
-- Track historical changes in customer data  
-- Preserve previous attribute values  
-- Implement Type 2 dimension logic  
 
 <img width="1462" height="818" alt="Screenshot 2026-02-13 at 5 03 25 PM" src="https://github.com/user-attachments/assets/acf26369-097c-43e5-b234-bfe5205d6b5e" />
 
@@ -190,12 +178,6 @@ with source as (
 
 select * from source
 ```
-
-### Purpose
-
-- Always expose the latest active version of each record  
-- Preserve full historical data in the snapshot layer  
-- Separate current-state reporting from historical tracking  
 
 <img width="1470" height="673" alt="Screenshot 2026-02-13 at 5 06 04 PM" src="https://github.com/user-attachments/assets/450f4551-a96b-4459-b9b8-231669072d4f" />
 
