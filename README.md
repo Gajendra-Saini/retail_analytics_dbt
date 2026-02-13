@@ -1,4 +1,4 @@
-# 🚀 Retail Analytics Engineering Project  
+# 🚀 Retail Analytics Project using dbt
 **End-to-End Modern Data Stack Implementation using Snowflake & dbt**
 
 ---
