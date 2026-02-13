@@ -1,0 +1,12 @@
+version: 2
+
+snapshots:
+  - name: customers_snapshot
+    description: "SCD Type 2 snapshot of customers"
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+      - name: dbt_valid_from
+        tests:
+          - not_null
