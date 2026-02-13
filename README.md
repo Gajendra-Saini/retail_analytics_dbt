@@ -21,6 +21,8 @@ The project simulates a real-world retail analytics use case involving:
 The final output supports scalable analytics, historical tracking, and BI-ready data models.
 
 <img width="1317" height="707" alt="Screenshot 2026-02-13 at 5 09 09 PM" src="https://github.com/user-attachments/assets/ea25a57f-35bd-4c67-b10f-04ff7078a913" />
+<img width="1469" height="803" alt="Screenshot 2026-02-13 at 5 30 08 PM" src="https://github.com/user-attachments/assets/86e1710f-c241-4712-8295-e5653cb68470" />
+
 
 ---
 
